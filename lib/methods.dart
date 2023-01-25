@@ -1,10 +1,12 @@
 import 'package:chat_app_firebase/login_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 Future<User?> createAccount(String name, String email, String password) async{
 
   FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   try{
 
@@ -12,6 +14,12 @@ Future<User?> createAccount(String name, String email, String password) async{
 
     if(user != null){
       print('Account created Successfully');
+
+      await _firebaseFirestore.collection('users').doc(_auth.currentUser?.uid).set({
+        "name" : name,
+        "email" : email,
+        "status" : "Unavailable"
+      });
       return user;
     }
     else{

@@ -25,11 +25,9 @@ class _CreateAccountState extends State<CreateAccount> {
 
     return SafeArea(
       child: Scaffold(
-        body: isLoading? Center(
+        body: isLoading? const Center(
           child: Center(
-            child: Container(
-              child: CircularProgressIndicator(),
-            ),
+            child: CircularProgressIndicator(),
           ),
         ): SingleChildScrollView(
           child: Column(
@@ -48,7 +46,7 @@ class _CreateAccountState extends State<CreateAccount> {
               SizedBox(
                 height: size.height / 50,
               ),
-              Container(
+              SizedBox(
                 width: size.width / 1.1,
                 child: const Text(
                   'Welcome',
@@ -58,7 +56,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: size.width / 1.1,
                 child: Text(
                   'Create Account In to Continue!',
@@ -169,7 +167,7 @@ class _CreateAccountState extends State<CreateAccount> {
   }
 
   Widget field(Size size , String hintText , IconData icon, TextEditingController controller){
-    return Container(
+    return SizedBox(
       height: size.height / 14,
       width: size.width / 1.1,
       child: TextField(

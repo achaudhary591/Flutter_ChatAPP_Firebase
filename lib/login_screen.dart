@@ -21,10 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: isLoading ? Center(
-        child: Container(
-          child: CircularProgressIndicator(),
-        ),
+      body: isLoading ? const Center(
+        child: CircularProgressIndicator(),
       ) : SingleChildScrollView(
         child: Column(
           children: [
@@ -35,14 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
               alignment: Alignment.centerLeft,
               width: size.width / 1.2,
               child: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 onPressed: () {},
               ),
             ),
             SizedBox(
               height: size.height / 50,
             ),
-            Container(
+            SizedBox(
               width: size.width / 1.1,
               child: const Text(
                 'Welcome',
@@ -52,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               width: size.width / 1.1,
               child: Text(
                 'Sign In to Continue!',
@@ -87,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: size.height / 40,
             ),
             GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => CreateAccount())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CreateAccount())),
               child: const Text(
                 'Create Account',
                 style: TextStyle(
@@ -153,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget field(Size size , String hintText , IconData icon, TextEditingController controller){
-    return Container(
+    return SizedBox(
       height: size.height / 14,
       width: size.width / 1.1,
       child: TextField(

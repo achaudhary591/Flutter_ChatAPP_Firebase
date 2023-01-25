@@ -1,4 +1,3 @@
-import 'package:chat_app_firebase/authenticate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,7 @@ import 'login_screen.dart';
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Authenticate(),
+      home: const LoginScreen(),
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
     );
   }
 }
