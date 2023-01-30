@@ -13,14 +13,14 @@ Future<User?> createAccount(String name, String email, String password) async {
     UserCredential userCrendetial = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
-    print("Account created Succesfull");
+    print("Account created Succesfully");
 
     userCrendetial.user!.updateDisplayName(name);
 
     await _firestore.collection('users').doc(_auth.currentUser!.uid).set({
       "name": name,
       "email": email,
-      "status": "Unavalible",
+      "status": "Unavailable",
       "uid": _auth.currentUser!.uid,
     });
 
@@ -39,7 +39,7 @@ Future<User?> logIn(String email, String password) async {
     UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email, password: password);
 
-    print("Login Sucessfull");
+    print("Login Successfully");
     _firestore
         .collection('users')
         .doc(_auth.currentUser!.uid)

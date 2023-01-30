@@ -21,93 +21,93 @@ class _CreateAccountState extends State<CreateAccount> {
     return Scaffold(
       body: isLoading
           ? Center(
-              child: SizedBox(
-                height: size.height / 20,
-                width: size.height / 20,
-                child: const CircularProgressIndicator(),
-              ),
-            )
+        child: SizedBox(
+          height: size.height / 20,
+          width: size.height / 20,
+          child: const CircularProgressIndicator(),
+        ),
+      )
           : SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: size.height / 20,
-                  ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    width: size.width / 0.5,
-                    child: IconButton(
-                        icon: const Icon(Icons.arrow_back_ios), onPressed: () {}),
-                  ),
-                  SizedBox(
-                    height: size.height / 50,
-                  ),
-                  SizedBox(
-                    width: size.width / 1.1,
-                    child: const Text(
-                      "Welcome",
-                      style: TextStyle(
-                        fontSize: 34,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: size.width / 1.1,
-                    child: Text(
-                      "Create Account to Contiue!",
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: size.height / 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 18.0),
-                    child: Container(
-                      width: size.width,
-                      alignment: Alignment.center,
-                      child: field(size, "Name", Icons.account_box, _name),
-                    ),
-                  ),
-                  Container(
-                    width: size.width,
-                    alignment: Alignment.center,
-                    child: field(size, "email", Icons.account_box, _email),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 18.0),
-                    child: Container(
-                      width: size.width,
-                      alignment: Alignment.center,
-                      child: field(size, "password", Icons.lock, _password),
-                    ),
-                  ),
-                  SizedBox(
-                    height: size.height / 20,
-                  ),
-                  customButton(size),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height / 20,
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              width: size.width / 0.5,
+              child: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios), onPressed: () {}),
+            ),
+            SizedBox(
+              height: size.height / 50,
+            ),
+            SizedBox(
+              width: size.width / 1.1,
+              child: const Text(
+                "Welcome",
+                style: TextStyle(
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
+            SizedBox(
+              width: size.width / 1.1,
+              child: Text(
+                "Create Account to Contiue!",
+                style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: size.height / 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 18.0),
+              child: Container(
+                width: size.width,
+                alignment: Alignment.center,
+                child: field(size, "Name", Icons.account_box, _name),
+              ),
+            ),
+            Container(
+              width: size.width,
+              alignment: Alignment.center,
+              child: field(size, "email", Icons.account_box, _email),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 18.0),
+              child: Container(
+                width: size.width,
+                alignment: Alignment.center,
+                child: field(size, "password", Icons.lock, _password),
+              ),
+            ),
+            SizedBox(
+              height: size.height / 20,
+            ),
+            customButton(size),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 

@@ -7,6 +7,7 @@ import 'add_members.dart';
 
 class GroupInfo extends StatefulWidget {
   final String groupId, groupName;
+
   const GroupInfo({required this.groupId, required this.groupName, Key? key})
       : super(key: key);
 
@@ -44,11 +45,11 @@ class _GroupInfoState extends State<GroupInfo> {
   bool checkAdmin() {
     bool isAdmin = false;
 
-    membersList.forEach((element) {
+    for (var element in membersList) {
       if (element['uid'] == _auth.currentUser!.uid) {
         isAdmin = element['isAdmin'];
       }
-    });
+    }
     return isAdmin;
   }
 
